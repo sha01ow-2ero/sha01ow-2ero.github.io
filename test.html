@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="application-name" content="sha01ow_2ero's Home">
+    <meta name="description" content="a simple website for myself">
+    <meta name="keywords" content="audio,javascript,css,game,html,markdown,image,cpp,article,mathjax,scratch,oi,vedio,poject">
+    <meta name="author" content="sha01ow_2ero">
+
+    <title>sha01ow_2ero's Home</title>
+    <link rel="icon" class="js-site-favicon" type="image/png" href="/sha01ow-2ero.png">
+
+    <script src="/javascript/mathjax-config.js" id=mathjax-config" async></script>
+    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
+
+    <script src="/javascript/base64.js"></script>
+    <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
+    <script src="/javascript/marked-config.js" id="marked-config"></script>
+
+    <link rel="stylesheet" href="/javascript/highlight.js/styles/github.min.css">
+    <script src="/javascript/highlight.js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>sha01ow_2ero</h1>
+    </header>
+    <div id="middle">
+      <div id="left">
+        <div class="card"><main><article></article></main></div>
+      </div>
+      <div id="right">
+        <div class="card">
+          <nav>
+            <audio autoplay controls loop>
+              <source src="/ワールドイズマイン (Anime ver.) (CPK! Remix) - ryo、かぐや(cv.夏吉ゆうこ)、月見ヤチヨ(cv.早見沙織).flac" type="audio/flac">
+              </source>
+              您的浏览器不支持 audio 元素或 audio 元素的 flac 格式音频文件喵……
+            </audio>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script>
+function putmarkdown(str)
+{document.querySelector("article").innerHTML=marked.parse(btou(str));}
+
+const article="IyMg5qCH6aKYCgojIyDkuoznuqfmoIfpopgKCiMjIyDkuInnuqfmoIfpopgKCiMjIyMg5Zub57qn5qCH6aKYCgo+IOW8leeUqArlhYjovojllYrlhYjovogKIAojIyDmnInluo/liJfooagKMS4g5oCd6ICD5YaF5a65CjIuIOe7hOe7h+ivreiogAozLiDlhpnkuIvmlofmnKwKCiMjIOaXoOW6j+WIl+ihqAotIOi/m+WFpeWFrOWPuOW3puiEmuWFpemXqAotIOiiq+iAgeadv+W8gOmZpAoqIHp6egoKIyMjIOWPr+eUqCrmiJYtCgojIyDku7vliqHliJfooagKCuS7iuWkqeWtpuS5oOS7u+WKoeWIl+ihqDoKLSBbIF0g5LuK5aSpCi0gW3hdIOS7iuWkqQotIFt4XSDmmI7lpKkKCiMjIOS7o+eggeWdlwrkuInkuKpgYGAr6L6T5YWl55qE5Luj56CB6K+t6KiAKDErMXByb2JsZW0pCmBgYGMKaW50IG1haW4oKQp7CiAgICBpbnQgYSxiOwogICAgY2luPj5hPj5iOwogICAgY291dDw8YStiOwp9CmBgYAoKIyMg5pWw5a2m5YWs5byPCgokJApcZnJhY3tccGFydGlhbCBmfXtccGFydGlhbCB4fSA9IDJcc3FydHthfXgKJCQKCiMjIOihqOagvAp8IOWnk+WQjSB8IOePree6pyB8IOW5tOm+hCB8Cnw6LS0tfC0tLS18Oi0tOnwKfCDlvKDkuIkgfCAyMCB8IDE0IHwKfOadjuWbm3wgMTggfCAxNSB8CgojIyDohJrms6g6CuWFs+azqGJhaeWWtVteMV0KClteMV066K+35pSv5oyBYmFp5Za1CgojIyDliIbnlYznur8KCi0tLQoK5LiK6Z2i5piv5LiA5Y+q6aaZ6aaZ6L2v6L2v55qE5YiG55WM57q/fgoKIyMg6ZO+5o6lClvmlK/mjIHkuLvljIVdKGh0dHBzOi8vYmlsaWJpbGkuY29tLyAiYmlsaWJpbGkiKQoKW+aUr+aMgeS4u+WMhV1baWRdCgpbaWRdOmh0dHBzOi8vYmlsaWJpbGkuY29tLyAiYmlsaWJpbGkiCgrot7PmsLTpk77mjqVb5qCH6aKYXSgj5qCH6aKYKQoKVVJMOgpodHRwczovL2hqeWgwMTIuZ2l0aHViLmlvLwoK5LiA5Y+q5Zu+54mHCiFb5Zu+XSguL3h1ZWxpLmpwZyAieHVlbGkiKQoKKuaWnOS9kyogKirliqDnspcqKiAgYHByaW50ZigpYCAsIDx1PuS4i+WIkue6vzwvdT4sICRcdGhldGE9eF4yJO+8jFwqYWFhXCo=";
+
+putmarkdown(article);
+
+function check(){
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)
+  ||window.matchMedia('(max-width: 1080px)').matches){
+    document.getElementById("left").style="width:100%;";
+    document.getElementById("right").style="width:100%;";
+    return true;
+  }else{
+    document.getElementById("left").style="width:calc(calc(100% - 8px) * 2 / 3);";
+    document.getElementById("right").style="width:calc(calc(100% - 8px) / 3);";
+    return false;
+  }
+}
+setInterval(check,10);
+    </script>
+  </body>
+</html>

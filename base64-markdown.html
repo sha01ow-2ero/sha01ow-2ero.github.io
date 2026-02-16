@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8">
+    <title>base64&markdown</title>
+    <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
+    <script src="/javascript/marked-config.js" id="marked-config"></script>
+    <script src="/javascript/base64.js"></script>
+  </head>
+  <body>
+    <textarea id="contents" style="width:300px;height:300px;"></textarea>
+    <br/>
+    <input type="button" onclick="contents.value=utob(contents.value);" value="base64加密">
+    <input type="button" onclick="contents.value=btou(contents.value);" value="base64解密">
+    <input type="button" onclick="contents.value=marked.parse(contents.value);" value="Markdown转HTML">
+  </body>
+</html>
