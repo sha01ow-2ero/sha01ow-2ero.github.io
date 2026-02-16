@@ -1,0 +1,4 @@
+import mathjax@3.3.2 from https://www.jsdelivr.com/package/npm/mathjax/es5/tex-mml-chtml.js
+import marked@17.0.1 from https://www.jsdelivr.com/package/npm/marked/lib/marked.umd.js
+import highlight.js@11.11.1 from https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js and https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/github.min.css
+import base64-js@1.5.1 from https://www.jsdelivr.com/package/npm/base64-js/base64js.min.js
