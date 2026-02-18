@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="application-name" content="sha01ow_2ero's Home">
     <meta name="description" content="a simple website for myself">
-    <meta name="keywords" content="audio,javascript,css,game,html,markdown,image,cpp,article,mathjax,scratch,oi,vedio,poject">
+    <meta name="keywords" content="audio,javascript,css,game,html,markdown,image,cpp,article,mathjax,scratch,oi,video,project">
     <meta name="author" content="sha01ow_2ero">
     <title>sha01ow_2ero's Home</title>
     <link rel="icon" type="image/png" href="/image/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="/style.css">
     <!-- highlight.css -->
@@ -61,8 +62,8 @@ function check()
     is_mobile=true;
   else//PC端
     is_mobile=false;
-  left.style.width=is_mobile?'100%':'calc(calc(100% - 8px) * 2 / 3)';
-  right.style.width=is_mobile?'100%':'calc(calc(100% - 8px) / 3)';
+  left.style.width=is_mobile?'100%':'calc((100% - 8px) * 2 / 3)';
+  right.style.width=is_mobile?'100%':'calc((100% - 8px) / 3)';
   footer_left.innerHTML=is_mobile?'':footerHTML;
   footer_right.innerHTML=is_mobile?footerHTML:'';
 }
