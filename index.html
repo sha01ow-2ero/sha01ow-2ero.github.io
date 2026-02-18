@@ -49,6 +49,7 @@
     </div>
     <script>
 //check
+let last_is_mobile=null;
 function check()
 {
   const left=document.getElementById('left');
@@ -62,6 +63,8 @@ function check()
     is_mobile=true;
   else//PC端
     is_mobile=false;
+  if (isMobile===lastIsMobile) return;
+  lastIsMobile=isMobile;
   left.style.width=is_mobile?'100%':'calc((100% - 8px) * 2 / 3)';
   right.style.width=is_mobile?'100%':'calc((100% - 8px) / 3)';
   footer_left.innerHTML=is_mobile?'':footerHTML;
