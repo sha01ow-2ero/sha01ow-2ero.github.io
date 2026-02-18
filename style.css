@@ -87,9 +87,16 @@ h6.center{margin:0.5em 0;text-align:center;}
 /*分隔线*/
 hr{border-color:#00000012;}
 /*区块*/
-#middle{margin:auto;width:min(1080px,100%);margin-top:78px;}
-#left{float:left;}
-#right{float:right;}
+#middle{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:auto;
+width:min(1080px,100%);
+margin-top:78px;
+}
+#left{flex: 2 0 auto;}
+#right{flex: 1 0 auto;}
 /*表格*/
 table{
 word-break:keep-all;
@@ -119,4 +126,5 @@ font-weight:400;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
+
 
