@@ -70,9 +70,9 @@ margin:5px 0;
 border-left:5px solid #e0e1e2;
 }
 /*标题*/
-h1{margin:20px 0 0;font-size:2em;}
-h2{margin:18px 0 0;font-size:1.83em;}
-h3{margin:16px 0 0;font-size:1.66em;}
+h1{margin:20px 0 0;font-size:2.5em;}
+h2{margin:18px 0 0;font-size:2em;}
+h3{margin:16px 0 0;font-size:1.75em;}
 h4{margin:14px 0 0;font-size:1.5em;}
 h5{margin:12px 0 0;font-size:1.33em;}
 h6{margin:10px 0 0;font-size:1.17em;}
@@ -117,3 +117,4 @@ padding:6px 13px;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
+
