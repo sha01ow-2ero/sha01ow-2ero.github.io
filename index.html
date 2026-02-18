@@ -72,11 +72,16 @@ window.addEventListener('resize',()=>{
   resize_timer=requestAnimationFrame(footer);
 });
 footer();
-//marked
-function putmarkdown(selector,text){document.querySelector(selector).innerHTML=marked.parse(btou(text));}//按 css 的 id 和 class 选择器查找
-putmarkdown("article","6L+Z5pivIHNoYTAxb3dfMmVybydzIEhvbWUg5Li76aG177yM5qyi6L+O5Zue5p2lIHF3ce+8geS9oOWPr+S7peeCueWHu+S+p+agj+e7p+e7reiuv+mXruWFtuS7luWGheWuueOAggoKKuivpemhtemdouWQjOaXtuS5n+S9nOS4uuWFtuS7lumhtemdoueahOaooeadv+OAgio=");
-//highlight.js
-hljs.highlightAll();
+//marked渲染
+function putmarkdown(selector,url)
+{
+  fetch(url)
+  .then(response=>response.text())
+  .then(markdown=>{
+    document.querySelector(selector).innerHTML=marked.parse(markdown);//marked（按 css 的 id 和 class 选择器查找）
+    hljs.highlightAll();//highlight.js
+  });
+}
     </script>
   </body>
 </html>
