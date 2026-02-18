@@ -9,20 +9,21 @@
     <meta name="author" content="sha01ow_2ero">
     <title>sha01ow_2ero's Home</title>
     <link rel="icon" type="image/png" href="/image/icon.png">
-    <!-- mathjax -->
-    <script src="/javascript/mathjax-config.js" id="mathjax-config" defer></script>
-    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax" defer></script>
-    <!-- marked -->
-    <script src="/javascript/marked/lib/marked.umd.js" id="marked" defer></script>
-    <script src="/javascript/marked-config.js" id="marked-config" defer></script>
-    <script src="/javascript/base64.js" id="base64"></script>
-    <!-- highlight.js -->
-    <link rel="stylesheet" href="/javascript/highlight.js/styles/github.min.css">
-    <script src="/javascript/highlight.js/highlight.min.js" defer></script>
-    <!--css-->
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- highlight.css -->
+    <link rel="stylesheet" href="/javascript/highlight.js/styles/github.min.css">
   </head>
   <body>
+    <!-- mathjax -->
+    <script src="/javascript/mathjax-config.js" id="mathjax-config"></script>
+    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
+    <!-- marked -->
+    <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
+    <script src="/javascript/marked-config.js" id="marked-config"></script>
+    <script src="/javascript/base64.js" id="base64"></script>
+    <!-- highlight.js -->
+    <script src="/javascript/highlight.js/highlight.min.js"></script>
     <header>
       <h1>sha01ow_2ero</h1>
     </header>
@@ -62,8 +63,8 @@ function check()
   }
   else//PC端
   {
-    left.style.width='calc(calc(100% - 8px) * 2 / 3);';
-    right.style.width='calc(calc(100% - 8px) / 3);';
+    left.style.width='calc(calc(100% - 8px) * 2 / 3)';
+    right.style.width='calc(calc(100% - 8px) / 3)';
     return false;
   }
 }
