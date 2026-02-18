@@ -16,17 +16,8 @@
     <link rel="stylesheet" href="/javascript/highlight.js/styles/github.min.css">
   </head>
   <body>
-    <!-- mathjax -->
-    <script src="/javascript/mathjax-config.js" id="mathjax-config"></script>
-    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
-    <!-- marked -->
-    <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
-    <script src="/javascript/marked-config.js" id="marked-config"></script>
-    <script src="/javascript/base64.js" id="base64"></script>
-    <!-- highlight.js -->
-    <script src="/javascript/highlight.js/highlight.min.js"></script>
     <header>
-      <h1>sha01ow_2ero</h1>
+      <h1>sha01ow_2ero's Home</h1>
     </header>
     <div id="middle">
       <div id="left">
@@ -47,6 +38,16 @@
         <footer id="footer-right"></footer>
       </div>
     </div>
+    <!-- mathjax -->
+    <script src="/javascript/mathjax-config.js" id="mathjax-config"></script>
+    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
+    <!-- marked -->
+    <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
+    <script src="/javascript/marked-config.js" id="marked-config"></script>
+    <script src="/javascript/base64.js" id="base64"></script>
+    <!-- highlight.js -->
+    <script src="/javascript/highlight.js/highlight.min.js"></script>
+    <!-- 渲染/render -->
     <script>
 //footer
 let last_is_mobile=null;
@@ -70,7 +71,7 @@ window.addEventListener('resize',()=>{
   if(resize_timer)cancelAnimationFrame(resize_timer);
   resize_timer=requestAnimationFrame(footer);
 });
-check();
+footer();
 //marked
 function putmarkdown(selector,text){document.querySelector(selector).innerHTML=marked.parse(btou(text));}//按 css 的 id 和 class 选择器查找
 putmarkdown("article","6L+Z5pivIHNoYTAxb3dfMmVybydzIEhvbWUg5Li76aG177yM5qyi6L+O5Zue5p2lIHF3ce+8geS9oOWPr+S7peeCueWHu+S+p+agj+e7p+e7reiuv+mXruWFtuS7luWGheWuueOAggoKKuivpemhtemdouWQjOaXtuS5n+S9nOS4uuWFtuS7lumhtemdoueahOaooeadv+OAgio=");
