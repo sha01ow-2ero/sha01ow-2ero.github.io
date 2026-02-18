@@ -37,7 +37,6 @@ font-size:2em;
 }
 /*卡片*/
 .card{
-margin-top:8px;
 display:block;
 background-color:#f0f1f2;
 border-radius:10px;
@@ -79,11 +78,6 @@ h4{margin:14px 0 0;font-size:1.5em;}
 h5{margin:12px 0 0;font-size:1.33em;}
 h6{margin:10px 0 0;font-size:1.17em;}
 h1.center{margin:0.5em 0;text-align:center;}
-h2.center{margin:0.5em 0;text-align:center;}
-h3.center{margin:0.5em 0;text-align:center;}
-h4.center{margin:0.5em 0;text-align:center;}
-h5.center{margin:0.5em 0;text-align:center;}
-h6.center{margin:0.5em 0;text-align:center;}
 /*分隔线*/
 hr{border-color:#00000012;}
 /*区块*/
@@ -126,5 +120,6 @@ font-weight:400;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
+
 
 
