@@ -32,10 +32,7 @@
         <div class="card">
           <main><article></article></main>
         </div>
-        <footer>
-          <p class="center">© 2024 - 2026 sha01ow-2ero.</p>
-          <p class="center">为了保证您的使用体验,建议使用国际网络环境访问</p>
-        </footer>
+        <footer id="footer-left"></footer>
       </div>
       <div id="right">
         <div class="card">
@@ -46,6 +43,7 @@
             </audio>
           </nav>
         </div>
+        <footer id="footer-right"></footer>
       </div>
     </div>
     <script>
@@ -54,17 +52,23 @@ function check()
 {
   const left=document.getElementById('left');
   const right=document.getElementById('right');
+  const footer_left=document.getElementById('footer-left');
+  const footer_right=document.getElementById('footer-right');
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)
   ||window.matchMedia('(max-width: 1080px)').matches)//移动端
   {
     left.style.width='100%';
     right.style.width='100%';
+    footer_right.innerHTML='<p class=\"center\">© 2024 - 2026 sha01ow-2ero.</p><p class=\"center\">为了保证您的使用体验,建议使用国际网络环境访问</p>';
+    footer_left.innerHTML='';
     return true;
   }
   else//PC端
   {
     left.style.width='calc(calc(100% - 8px) * 2 / 3)';
     right.style.width='calc(calc(100% - 8px) / 3)';
+    footer_left.innerHTML='<p class=\"center\">© 2024 - 2026 sha01ow-2ero.</p><p class=\"center\">为了保证您的使用体验,建议使用国际网络环境访问</p>';
+    footer_right.innerHTML='';
     return false;
   }
 }
