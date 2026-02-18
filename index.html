@@ -48,32 +48,27 @@
       </div>
     </div>
     <script>
-//check
+//footer
 let last_is_mobile=null;
-function check()
+function footer()
 {
-  const left=document.getElementById('left');
-  const right=document.getElementById('right');
   const footer_left=document.getElementById('footer-left');
   const footer_right=document.getElementById('footer-right');
   const footerHTML='<p class="center">© 2024-2026 sha01ow-2ero. All Rights Reserved.<br/>Developed by the <a href="https://github.com/sha01ow-2ero/">sha01ow_2ero</a></p><p class="center">为了保证您的使用体验，建议使用国际网络环境访问</p>';
   let is_mobile;
-  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)
-  ||window.matchMedia('(max-width: 1080px)').matches)//移动端
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)||window.matchMedia('(max-width: 1080px)').matches)//移动端
     is_mobile=true;
   else//PC端
     is_mobile=false;
   if(is_mobile===last_is_mobile)return;
   last_is_mobile=is_mobile;
-  left.style.width=is_mobile?'100%':'calc((100% - 8px) * 2 / 3)';
-  right.style.width=is_mobile?'100%':'calc((100% - 8px) / 3)';
   footer_left.innerHTML=is_mobile?'':footerHTML;
   footer_right.innerHTML=is_mobile?footerHTML:'';
 }
 let resize_timer;
 window.addEventListener('resize',()=>{
   if(resize_timer)cancelAnimationFrame(resize_timer);
-  resize_timer=requestAnimationFrame(check);
+  resize_timer=requestAnimationFrame(footer);
 });
 check();
 //marked
