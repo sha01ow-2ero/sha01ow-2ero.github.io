@@ -31,7 +31,7 @@ z-index:1024;
 }
 header>h1{/*顶栏标题*/
 margin:0;
-color:#ffffff
+color:#ffffff;
 font-size:2em;
 }
 /*卡片*/
@@ -84,7 +84,7 @@ h4.center{margin:0.5em 0;text-align:center;}
 h5.center{margin:0.5em 0;text-align:center;}
 h6.center{margin:0.5em 0;text-align:center;}
 /*分隔线*/
-hr{border-color:#00000012}
+hr{border-color:#00000012;}
 /*区块*/
 #middle{margin:auto;width:min(1080px,100%);margin-top:78px;}
 #left{float:left;}
@@ -105,18 +105,16 @@ padding:6px 13px;
 }
 /*Tuack表格*/
 .tuack{
-  border-top:5px solid currentcolor;
-  border-bottom:5px solid currentcolor;
-  overflow:auto;
-  margin:1em auto;
-  display:table;
-  text-align:center;
-  font-weight:400;
+border-top:5px solid currentcolor;
+border-bottom:5px solid currentcolor;
+overflow:auto;
+margin:1em auto;
+display:table;
+text-align:center;
+font-weight:400;
 }
 .tuack thead{border-bottom:3px solid currentcolor;}
 .tuack th,.tuack td{border:none;}
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
-
-
