@@ -6,6 +6,7 @@ color:#404040;
 line-height:1.5;
 }
 .none{margin:0;}
+.center{text-align:center;}
 /*链接*/
 a:link{color:#3498db;text-decoration:none;}/*未访问链接*/
 a:visited{color:#3498db;text-decoration:none;}/*已访问链接*/
@@ -118,3 +119,4 @@ font-weight:400;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
+
