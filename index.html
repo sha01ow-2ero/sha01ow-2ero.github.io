@@ -10,15 +10,15 @@
     <title>sha01ow_2ero's Home</title>
     <link rel="icon" type="image/png" href="/image/icon.png">
     <!-- mathjax -->
-    <script src="/javascript/mathjax-config.js" id=mathjax-config"></script>
-    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
+    <script src="/javascript/mathjax-config.js" id="mathjax-config" defer></script>
+    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax" defer></script>
     <!-- marked -->
-    <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
-    <script src="/javascript/marked-config.js" id="marked-config"></script>
+    <script src="/javascript/marked/lib/marked.umd.js" id="marked" defer></script>
+    <script src="/javascript/marked-config.js" id="marked-config" defer></script>
     <script src="/javascript/base64.js" id="base64"></script>
     <!-- highlight.js -->
     <link rel="stylesheet" href="/javascript/highlight.js/styles/github.min.css">
-    <script src="/javascript/highlight.js/highlight.min.js"></script>
+    <script src="/javascript/highlight.js/highlight.min.js" defer></script>
     <!--css-->
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
@@ -51,21 +51,23 @@
 //check
 function check()
 {
+  const left=document.getElementById('left');
+  const right=document.getElementById('right');
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)
   ||window.matchMedia('(max-width: 1080px)').matches)//移动端
   {
-    document.getElementById("left").style="width:100%;";
-    document.getElementById("right").style="width:100%;";
+    left.style.width='100%';
+    right.style.width='100%';
     return true;
   }
   else//PC端
   {
-    document.getElementById("left").style="width:calc(calc(100% - 8px) * 2 / 3);";
-    document.getElementById("right").style="width:calc(calc(100% - 8px) / 3);";
+    left.style.width='calc(calc(100% - 8px) * 2 / 3);';
+    right.style.width='calc(calc(100% - 8px) / 3);';
     return false;
   }
 }
-setInterval(check,10);//按照 10 毫秒的周期调用 check 函数
+window.addEventListener('resize',check);
 //marked
 function putmarkdown(selector,text){document.querySelector(selector).innerHTML=marked.parse(btou(text));}//按 css 的 id 和 class 选择器查找
 putmarkdown("article","6L+Z5pivIHNoYTAxb3dfMmVybydzIEhvbWUg5Li76aG177yM5qyi6L+O5Zue5p2lIHF3ce+8geS9oOWPr+S7peeCueWHu+S+p+agj+e7p+e7reiuv+mXruWFtuS7luWGheWuueOAggoKKuivpemhtemdouWQjOaXtuS5n+S9nOS4uuWFtuS7lumhtemdoueahOaooeadv+OAgio=");
