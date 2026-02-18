@@ -28,7 +28,7 @@ background:#d0d1d2;
 color:black;
 padding:15px;
 display:block;
-z-index:1024;
+z-index:1024;/*定栏强制置顶*/
 }
 header>h1{/*顶栏标题*/
 margin:0;
@@ -120,8 +120,3 @@ font-weight:400;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
-
-
-
-
-
