@@ -63,7 +63,7 @@ function check()
     is_mobile=true;
   else//PC端
     is_mobile=false;
-  if (isMobile===lastIsMobile) return;
+  if(is_mobile===last_is_mobile)return;
   lastIsMobile=isMobile;
   left.style.width=is_mobile?'100%':'calc((100% - 8px) * 2 / 3)';
   right.style.width=is_mobile?'100%':'calc((100% - 8px) / 3)';
