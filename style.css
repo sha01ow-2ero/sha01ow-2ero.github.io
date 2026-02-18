@@ -77,7 +77,7 @@ h3{margin:16px 0 0;font-size:1.75em;}
 h4{margin:14px 0 0;font-size:1.5em;}
 h5{margin:12px 0 0;font-size:1.33em;}
 h6{margin:10px 0 0;font-size:1.17em;}
-h1.center{margin:0.5em 0;text-align:center;}
+h1.center,h2.center,h3.center,h4.center,h5.center,h6.center{margin:0.5em 0;text-align:center;}
 /*分隔线*/
 hr{border-color:#00000012;}
 /*区块*/
@@ -120,6 +120,7 @@ font-weight:400;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
+
 
 
 
