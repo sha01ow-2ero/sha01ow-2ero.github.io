@@ -38,15 +38,15 @@
         <footer id="footer-right"></footer>
       </div>
     </div>
-    <!-- mathjax -->
-    <script src="/javascript/mathjax-config.js" id="mathjax-config"></script>
-    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
     <!-- marked -->
     <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
     <script src="/javascript/marked-config.js" id="marked-config"></script>
     <script src="/javascript/base64.js" id="base64"></script>
     <!-- highlight.js -->
     <script src="/javascript/highlight.js/highlight.min.js"></script>
+    <!-- mathjax -->
+    <script src="/javascript/mathjax-config.js" id="mathjax-config"></script>
+    <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
     <!-- 渲染/render -->
     <script>
 //footer
@@ -82,6 +82,7 @@ function putmarkdown(selector,url)
     hljs.highlightAll();//highlight.js
   });
 }
+putmarkdown("article","./index.md")
     </script>
   </body>
 </html>
