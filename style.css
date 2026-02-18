@@ -32,6 +32,7 @@ z-index:1024;
 header>h1{/*顶栏标题*/
 margin:0;
 color:#ffffff
+font-size:2em;
 }
 /*卡片*/
 .card{
@@ -117,4 +118,5 @@ padding:6px 13px;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
+
 
