@@ -1,20 +1,22 @@
-a:link{color:#3498db;text-decoration:none;}
-a:visited{color:#3498db;text-decoration:none;}
-a:hover{color:#14558f;text-decoration:none;}
-a:active{color:#14558f;text-decoration:none;}
-
+/*全局设置*/
 body{
-background-color:#e0e1e2;font-size:16px;
+background-color:#e0e1e2;
 font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Noto Sans,Noto Sans SC,Source Sans Pro,Source Han Sans,Segoe UI,Arial,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 color:#404040;
 line-height:1.5;
 }
-
+.none{margin:0;}
+/*链接*/
+a:link{color:#3498db;text-decoration:none;}/*未访问链接*/
+a:visited{color:#3498db;text-decoration:none;}/*已访问链接*/
+a:hover{color:#14558f;text-decoration:none;}/*鼠标移动到链接上*/
+a:active{color:#14558f;text-decoration:none;}/*鼠标点击时*/
+/*段落*/
 p{margin:1rem 0;}
 blockquote>p{margin:0;}
-
+/*图像*/
 img{width:100%;}
-
+/*顶栏*/
 header{
 box-shadow:0 20px 30px #10111240;
 position:fixed;
@@ -27,11 +29,11 @@ padding:15px;
 display:block;
 z-index:1024;
 }
-header>h1{
+header>h1{/*顶栏标题*/
 margin:0;
 color:#ffffff
 }
-
+/*卡片*/
 .card{
 margin-top:8px;
 display:block;
@@ -41,19 +43,19 @@ box-shadow:0 4px 10px 1px #10111240;
 box-sizing:border-box;
 padding:1.5em;
 }
-
+/*代码块*/
 code{
 font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;
 background-color:#d0d1d240;
 border:1px solid #e0e1e2;
 border-radius:3px;
 }
-pre>code{
+pre>code{/*代码块中的代码需特殊处理*/
 background-color:#ffffff00;
 border:none;
 border-radius:0px;
 }
-
+/*代码*/
 pre{
 font-family:"Fira Code","Fira Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;
 background-color:#d0d1d240;
@@ -61,35 +63,32 @@ border:1px solid #e0e1e2;
 border-radius:3px;
 overflow:auto;
 }
-
+/*引用*/
 blockquote{
 padding:10px 10px;
 margin:5px 0;
 border-left:5px solid #e0e1e2;
 }
-
+/*标题*/
+h1{margin:20px 0 0;font-size:2em;}
+h2{margin:18px 0 0;font-size:1.83em;}
+h3{margin:16px 0 0;font-size:1.66em;}
+h4{margin:14px 0 0;font-size:1.5em;}
+h5{margin:12px 0 0;font-size:1.33em;}
+h6{margin:10px 0 0;font-size:1.17em;}
 h1.center{margin:0.5em 0;text-align:center;}
 h2.center{margin:0.5em 0;text-align:center;}
 h3.center{margin:0.5em 0;text-align:center;}
 h4.center{margin:0.5em 0;text-align:center;}
 h5.center{margin:0.5em 0;text-align:center;}
 h6.center{margin:0.5em 0;text-align:center;}
-
-.none{margin:0;}
-
-h1{margin:20px 0 0;}
-h2{margin:18px 0 0;}
-h3{margin:16px 0 0;}
-h4{margin:14px 0 0;}
-h5{margin:12px 0 0;}
-h6{margin:10px 0 0;}
-
+/*分隔线*/
 hr{border-color:#00000012}
-
+/*区块*/
+#middle{margin:auto;width:min(1080px,100%);margin-top:78px;}
 #left{float:left;}
 #right{float:right;}
-#middle{margin:auto;width:min(1080px,100%);margin-top:78px;}
-
+/*表格*/
 table{
 word-break:keep-all;
 width:auto;
@@ -100,10 +99,10 @@ overflow:auto;
 margin:10px;
 }
 th,td{
-  border:1px solid #ddd;
-  padding:6px 13px;
+border:1px solid #ddd;
+padding:6px 13px;
 }
-
+/*Tuack表格*/
 .tuack{
   border-top:5px solid currentcolor;
   border-bottom:5px solid currentcolor;
