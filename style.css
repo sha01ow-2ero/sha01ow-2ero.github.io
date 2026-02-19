@@ -12,6 +12,7 @@ a:link{color:#3498db;text-decoration:none;}/*未访问链接*/
 a:visited{color:#3498db;text-decoration:none;}/*已访问链接*/
 a:hover{color:#14558f;text-decoration:none;}/*鼠标移动到链接上*/
 a:active{color:#14558f;text-decoration:none;}/*鼠标点击时*/
+nav>.card>a:link,nav>.card>a:visited{color:#404040;}
 /*段落*/
 p{margin:1rem 0;}
 blockquote>p{margin:0;}
@@ -43,6 +44,9 @@ border-radius:10px;
 box-shadow:1px 3px 5px 0px #00000040;
 box-sizing:border-box;
 padding:1.5em;
+}
+nav>.card{
+padding:15px;
 }
 /*代码块*/
 code{
@@ -118,6 +122,5 @@ font-weight:400;
 }
 .tuack thead{border-bottom:3px solid currentcolor;}
 .tuack th,.tuack td{border:none;}
-.tuack th:not(:last-child){border-right:1px solid currentcolor;}
-.tuack td:not(:last-child){border-right:1px solid currentcolor;}
+.tuack th:not(:last-child),.tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
