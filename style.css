@@ -5,8 +5,8 @@ font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Noto San
 color:#404040;
 line-height:1.5;
 }
-.none{margin:0;}
-.center{text-align:center;}
+.none{margin:0;}/*取消边距*/
+.left{text-align:left;}.center{text-align:center;}.right{text-align:right;}/*居左居中居右*/
 /*链接*/
 a:link{color:#3498db;text-decoration:none;}/*未访问链接*/
 a:visited{color:#3498db;text-decoration:none;}/*已访问链接*/
@@ -28,7 +28,7 @@ background:#d0d0d0;
 color:black;
 padding:15px;
 display:block;
-z-index:1024;/*定栏强制置顶*/
+z-index:1000;/*定栏强制置顶*/
 }
 header>h1{/*顶栏标题*/
 margin:0;
@@ -48,7 +48,7 @@ padding:1.5em;
 code{
 font-family:Fira Code,Fira Mono,Menlo,Consolas,DejaVu Sans Mono,monospace;
 background-color:#d0d0d0;
-border:1px solid #e0e1e2;
+border:1px solid #e0e0e0;
 border-radius:3px;
 }
 pre>code{/*代码块中的代码需特殊处理*/
@@ -121,4 +121,3 @@ font-weight:400;
 .tuack th:not(:last-child){border-right:1px solid currentcolor;}
 .tuack td:not(:last-child){border-right:1px solid currentcolor;}
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
-
