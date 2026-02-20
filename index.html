@@ -22,7 +22,7 @@
     <div id="middle">
       <div id="left">
         <div class="card">
-          <main><article>marked 渲染失败……</article></main>
+          <main><article>marked 渲染中……</article></main>
         </div>
         <footer id="footer-left"></footer>
       </div>
@@ -36,8 +36,8 @@
             <div class="card"><a href="/article">article</a></div>
           </nav>
         </div>
+        <footer id="footer-right"></footer>
       </div>
-      <footer id="footer-bottom"></footer>
     </div>
     <!-- marked -->
     <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
@@ -55,7 +55,7 @@ let last_is_mobile=null;
 function footer()
 {
   const footer_left=document.getElementById('footer-left');
-  const footer_bottom=document.getElementById('footer-bottom');
+  const footer_right=document.getElementById('footer-right');
   const footerHTML='<p class="center">© 2024-2026 sha01ow-2ero. All Rights Reserved.<br/>Developed by the <a href="https://github.com/sha01ow-2ero/">sha01ow_2ero</a></p><p class="center">为了保证您的使用体验，建议使用国际网络环境访问</p>';
   let is_mobile;
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)||window.matchMedia('(max-width: 1080px)').matches)//移动端
@@ -65,7 +65,7 @@ function footer()
   if(is_mobile===last_is_mobile)return;
   last_is_mobile=is_mobile;
   footer_left.innerHTML=is_mobile?'':footerHTML;
-  footer_bottom.innerHTML=is_mobile?footerHTML:'';
+  footer_right.innerHTML=is_mobile?footerHTML:'';
 }
 let resize_timer;
 window.addEventListener('resize',()=>{
