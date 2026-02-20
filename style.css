@@ -130,6 +130,6 @@ font-weight:400;
 .tuack tr:not(:last-child){border-bottom:1px solid currentcolor;}
 /*打印样式*/
 @media print{
-#right,header{display:none;}
-body{background:white;}
+#right,header,footer{display:none;}
+*{background:white;box-shadow:none;}
 }
