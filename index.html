@@ -28,11 +28,11 @@
       </div>
       <div id="right">
         <div class="card">
+          <audio controls loop>
+            <source src="/audio/world-is-mine-remix.flac" type="audio/flac"></source>
+            您的浏览器不支持 audio 元素或 audio 元素的 flac 格式音频文件……
+          </audio>
           <nav>
-            <audio controls loop>
-              <source src="/audio/world-is-mine-remix.flac" type="audio/flac"></source>
-              您的浏览器不支持 audio 元素或 audio 元素的 flac 格式音频文件……
-            </audio>
             <div class="card"><a href="/article">article</a></div>
           </nav>
         </div>
@@ -43,11 +43,11 @@
     <script src="/javascript/marked/lib/marked.umd.js" id="marked"></script>
     <script src="/javascript/marked-config.js" id="marked-config"></script>
     <script src="/javascript/base64.js" id="base64"></script>
+    <!-- highlight.js -->
+    <script src="/javascript/highlight.js/highlight.min.js" id="highlight.js"></script>
     <!-- mathjax -->
     <script src="/javascript/mathjax-config.js" id="mathjax-config"></script>
     <script src="/javascript/mathjax/es5/tex-chtml.js" id="mathjax"></script>
-    <!-- highlight.js -->
-    <script src="/javascript/highlight.js/highlight.min.js"></script>
     <!-- 渲染/render -->
     <script>
 //footer
@@ -67,12 +67,6 @@ function footer()
   footer_left.innerHTML=is_mobile?'':footerHTML;
   footer_right.innerHTML=is_mobile?footerHTML:'';
 }
-let resize_timer;
-window.addEventListener('resize',()=>{
-  if(resize_timer)cancelAnimationFrame(resize_timer);
-  resize_timer=requestAnimationFrame(footer);
-});
-footer();
 //marked渲染
 function putmarkdown(selector,url)
 {
@@ -83,14 +77,22 @@ function putmarkdown(selector,url)
     })
   .then(markdown=>{
     document.querySelector(selector).innerHTML=marked.parse(markdown);//marked（按 css 的 id 和 class 选择器查找）
-    if(window.MathJax)MathJax.typesetPromise?.();
     hljs.highlightAll();//highlight.js
+    if(window.MathJax)MathJax.typesetPromise?.();
   })
   .catch(error=>{
-    document.querySelector(selector).innerHTML = 'Markdown 加载失败：${error.message}';
+    document.querySelector(selector).innerHTML=`Markdown 加载失败：${error.message}`;
   });
 }
-putmarkdown("article","./index.md")
+document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
+  let resize_timer;
+  window.addEventListener('resize',()=>{
+    if(resize_timer)cancelAnimationFrame(resize_timer);
+    resize_timer=requestAnimationFrame(footer);
+  });
+  footer();
+  putmarkdown("article","./index.md");
+});
     </script>
   </body>
 </html>
