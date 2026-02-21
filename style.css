@@ -8,12 +8,19 @@ line-height:1.5;
 .none{margin:0;}/*取消边距*/
 .left{text-align:left;}.center{text-align:center;}.right{text-align:right;}/*居左居中居右*/
 /*链接*/
+a{transition:color 0.2s ease;}
 a:link{color:#3498db;text-decoration:none;}/*未访问链接*/
 a:visited{color:#3498db;text-decoration:none;}/*已访问链接*/
 a:hover{color:#14558f;text-decoration:none;}/*鼠标移动到链接上*/
 a:active{color:#14558f;text-decoration:none;}/*鼠标点击时*/
-nav>.card>a:link,nav>.card>a:visited{color:#404040;}
-nav>.card>a:hover,nav>.card>a:active{color:#3498db;}
+/*侧栏链接*/
+a.card>p:link,a.card>p:visited{color:#404040;margin:0;}
+a.card>p:hover,a.card>p:active{color:#3498db;margin:0;}
+a.card{padding:10px 20px;}
+a.card:link{color:#f0f0f0;text-decoration:none;}/*未访问链接*/
+a.card:visited{color:#f0f0f0;text-decoration:none;}/*已访问链接*/
+a.card:hover{color:#d0e0f0;text-decoration:none;}/*鼠标移动到链接上*/
+a.card:active{color:#d0e0f0;text-decoration:none;}/*鼠标点击时*/
 /*段落*/
 p{margin:1rem 0;}
 blockquote>p{margin:0;}
@@ -45,9 +52,6 @@ border-radius:10px;
 box-shadow:1px 3px 5px 0px #00000040;
 box-sizing:border-box;
 padding:1.5em;
-}
-nav>.card{
-padding:15px;
 }
 /*代码块*/
 code{
@@ -133,5 +137,6 @@ font-weight:400;
 #right,header,footer{display:none;}
 *{background:white;box-shadow:none;}
 }
+
 
 
