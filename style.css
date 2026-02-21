@@ -14,8 +14,8 @@ a:visited{color:#3498db;text-decoration:none;}/*已访问链接*/
 a:hover{color:#14558f;text-decoration:none;}/*鼠标移动到链接上*/
 a:active{color:#14558f;text-decoration:none;}/*鼠标点击时*/
 /*侧栏链接*/
-a.card>p:link,a.card>p:visited{color:#404040;margin:0;}
-a.card>p:hover,a.card>p:active{color:#3498db;margin:0;}
+a.card>p{color:#404040;margin:0;transition:color 0.2s ease;}
+a.card>p:hover{color:#3498db;margin:0;}
 a.card{padding:10px 20px;}
 a.card:link{color:#f0f0f0;text-decoration:none;}/*未访问链接*/
 a.card:visited{color:#f0f0f0;text-decoration:none;}/*已访问链接*/
@@ -137,6 +137,7 @@ font-weight:400;
 #right,header,footer{display:none;}
 *{background:white;box-shadow:none;}
 }
+
 
 
 
