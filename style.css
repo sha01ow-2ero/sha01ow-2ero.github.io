@@ -8,15 +8,15 @@ line-height:1.5;
 .none{margin:0;}/*取消边距*/
 .left{text-align:left;}.center{text-align:center;}.right{text-align:right;}/*居左居中居右*/
 /*链接*/
-a{transition:color 0.3s ease-in-out;text-decoration:none;}
+a{text-decoration:none;transition:color 0.3s ease-in-out;}/*取消下划线 过渡*/
 a:link{color:#3498db;}/*未访问链接*/
 a:visited{color:#3498db;}/*已访问链接*/
 a:hover{color:#14558f;}/*鼠标移动到链接上*/
 a:active{color:#14558f;}/*鼠标点击时*/
-/*侧栏链接*/
-a.card>p{color:#404040;margin:10px 20px;}
+/*导航栏链接*/
+a.card>p{color:#404040;margin:10px 20px;transition:color 0.3s ease-in-out;}
 a.card>p:hover{color:#3498db;}
-a.card{box-shadow:none;padding:0.02px 0;transition:background-color 0.3s ease-in-out;}
+a.card{box-shadow:none;padding:0.02px 0;transition:background-color 0.3s ease-in-out;}/*取消阴影和填充 过渡*/
 a.card:link{background-color:#f0f0f0;}/*未访问链接*/
 a.card:visited{background-color:#f0f0f0;}/*已访问链接*/
 a.card:hover{background-color:#d0e0f0;}/*鼠标移动到链接上*/
@@ -34,7 +34,6 @@ top:0;
 left:0;
 width:100%;
 background:#d0d0d0;
-color:black;
 padding:15px;
 display:block;
 z-index:1000;/*定栏强制置顶*/
@@ -105,7 +104,7 @@ width:min(1080px,100%);
 #left,#right{flex:1 0 100%;}
 }
 /*音频*/
-audio{width:max(100%,300px);}
+audio{width:max(220px,100%);}
 /*表格*/
 table{
 word-break:keep-all;
@@ -139,6 +138,3 @@ font-weight:400;
 #right,header,footer{display:none;}
 *{background:white;box-shadow:none;}
 }
-
-
-
