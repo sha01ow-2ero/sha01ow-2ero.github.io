@@ -4,8 +4,8 @@ background-color:#e0e0e0;/*背景颜色*/
 font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Noto Sans,Noto Sans SC,Source Sans Pro,Source Han Sans,Segoe UI,Arial,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;/*字体*/
 color:#404040;/*字体颜色*/
 line-height:1.5;
-transition:0.3s ease-in-out;
 }
+*{transition:0.3s ease-in-out;}
 .none{margin:0;}/*取消边距*/
 .left{text-align:left;}.center{text-align:center;}.right{text-align:right;}/*居左居中居右*/
 /*链接*/
@@ -139,4 +139,5 @@ font-weight:400;
 #right,header,footer{display:none;}
 *{background:white;box-shadow:none;}
 }
+
 
