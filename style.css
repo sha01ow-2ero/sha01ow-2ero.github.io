@@ -55,7 +55,7 @@ box-sizing:border-box;
 padding:1.5em;
 }
 .article{/*文章卡片*/
-margin-top:8px;
+margin-bottom:8px;
 }
 .article h1{/*文章标题*/
 margin:0;
