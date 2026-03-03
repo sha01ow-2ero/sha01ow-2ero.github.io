@@ -102,7 +102,7 @@ function random_music(url)
   })
   .then(data=>{
     for(let i=0;i<data.audio.length;i++)
-      for(let j=0;j<data.audio[i].num;j++)
+      for(let j=0;j<data.audio[i].weight;j++)
         arr.push(data.audio[i].url);
     document.querySelector("audio>source").src=arr[random(0,arr.lenth-1)];
   })
