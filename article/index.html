@@ -108,7 +108,7 @@ function random_music(url)
     for(let i=0;i<data.audio.length;i++)
       for(let j=0;j<data.audio[i].weight;j++)
         arr.push(data.audio[i].url);
-    document.querySelector("#sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source></audio>`+document.querySelector("#sidebar").innerHTML;
+    document.querySelector("#sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source>您的浏览器不支持 audio 元素</audio>`+document.querySelector("#sidebar").innerHTML;
   })
   .catch(error=>{
     document.querySelector("#sidebar").innerHTML=`<p>MP3 加载失败：${error.message}</p>`+document.querySelector("#sidebar").innerHTML;
