@@ -29,8 +29,8 @@
       <div id="right">
         <div class="card">
           <audio controls loop>
-            <source src="/audio/world-is-mine-remix.flac" type="audio/flac"></source>
-            您的浏览器不支持 audio 元素或 audio 元素的 flac 格式音频文件……
+            <source src="/audio/cosmic-princess-kaguya/Starry-Sea.mp3" type="audio/mp3"></source>
+            您的浏览器不支持 audio 元素……
           </audio>
           <nav>
             <a class="card" href="/article"><p>article</p></a>
@@ -89,6 +89,25 @@ function putmarkdown(selector,url)
   })
   .catch(error=>{
     document.querySelector(selector).innerHTML=`Markdown 加载失败：${error.message}`;
+  });
+}
+function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function random_music(url)
+{
+  fetch(url)
+  .then(response=>{
+    if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data=>{
+    let arr=[];
+    for(let i=0;i<data.audio.lenth;i++)
+      for(let j=0;j<data.audio[i].num;j++)
+        arr.push(data.audio[i].url);
+    document.querySelector("audio>source").innerHTML.src=arr[random(0,arr.lenth-1)];
+  })
+  .catch(error=>{
+    document.querySelector("audio").innerHTML=`加载失败：${error.message}`;
   });
 }
 document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
