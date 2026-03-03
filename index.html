@@ -28,28 +28,6 @@
       </div>
       <div id="right">
         <div id="sidebar" class="card">
-          <script>
-function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
-function random_music(url)
-{
-  let arr=[];
-  fetch(url)
-  .then(response=>{
-    if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
-    return response.json();
-  })
-  .then(data=>{
-    for(let i=0;i<data.audio.length;i++)
-      for(let j=0;j<data.audio[i].weight;j++)
-        arr.push(data.audio[i].url);
-    document.querySelector("sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source></audio>`+document.querySelector("sidebar").innerHTML;
-  })
-  .catch(error=>{
-    document.querySelector("sidebar").innerHTML=`<p>加载失败：${error.message}</p>`+document.querySelector("sidebar").innerHTML;
-  });
-}
-random_music("/audio/cosmic-princess-kaguya/config.json");
-          </script>
           <nav>
             <a class="card" href="/article"><p>article</p></a>
             <a class="card" href="/image"><p>image</p></a>
@@ -109,6 +87,26 @@ function putmarkdown(selector,url)
     document.querySelector(selector).innerHTML=`Markdown 加载失败：${error.message}`;
   });
 }
+//随机音频播放器
+function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function random_music(url)
+{
+  let arr=[];
+  fetch(url)
+  .then(response=>{
+    if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data=>{
+    for(let i=0;i<data.audio.length;i++)
+      for(let j=0;j<data.audio[i].weight;j++)
+        arr.push(data.audio[i].url);
+    document.querySelector("#sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source></audio>`+document.querySelector("#sidebar").innerHTML;
+  })
+  .catch(error=>{
+    document.querySelector("#sidebar").innerHTML=`<p>加载失败：${error.message}</p>`+document.querySelector("#sidebar").innerHTML;
+  });
+}
 document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
   let resize_timer;
   window.addEventListener('resize',()=>{
@@ -117,6 +115,7 @@ document.addEventListener('DOMContentLoaded',function(){//等待文档完全加�
   });
   footer();
   putmarkdown("article","./index.md");
+  random_music("/audio/cosmic-princess-kaguya/config.json");
 });
     </script>
   </body>
