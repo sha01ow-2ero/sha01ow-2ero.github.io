@@ -16,6 +16,28 @@
     <link rel="stylesheet" href="/javascript/highlight.js/styles/github.min.css">
   </head>
   <body>
+    <script>
+function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function random_music(url)
+{
+  let arr=[];
+  fetch(url)
+  .then(response=>{
+    if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data=>{
+    for(let i=0;i<data.audio.length;i++)
+      for(let j=0;j<data.audio[i].weight;j++)
+        arr.push(data.audio[i].url);
+    document.querySelector("audio>source").src=arr[random(0,arr.length-1)];
+  })
+  .catch(error=>{
+    document.querySelector("audio").innerHTML=`加载失败：${error.message}`;
+  });
+}
+random_music("/audio/cosmic-princess-kaguya/config.json");
+    </script>
     <header>
       <a href="/"><h1>sha01ow_2ero's</h1></a>
     </header>
@@ -91,25 +113,6 @@ function putmarkdown(selector,url)
     document.querySelector(selector).innerHTML=`Markdown 加载失败：${error.message}`;
   });
 }
-function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
-function random_music(url)
-{
-  let arr=[];
-  fetch(url)
-  .then(response=>{
-    if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
-    return response.json();
-  })
-  .then(data=>{
-    for(let i=0;i<data.audio.length;i++)
-      for(let j=0;j<data.audio[i].weight;j++)
-        arr.push(data.audio[i].url);
-    document.querySelector("audio>source").src=arr[random(0,arr.length-1)];
-  })
-  .catch(error=>{
-    document.querySelector("audio").innerHTML=`加载失败：${error.message}`;
-  });
-}
 document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
   let resize_timer;
   window.addEventListener('resize',()=>{
@@ -118,7 +121,6 @@ document.addEventListener('DOMContentLoaded',function(){//等待文档完全加�
   });
   footer();
   putmarkdown("article","./index.md");
-  random_music("/audio/cosmic-princess-kaguya/config.json");
 });
     </script>
   </body>
