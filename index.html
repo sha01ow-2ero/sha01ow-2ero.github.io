@@ -94,17 +94,17 @@ function putmarkdown(selector,url)
 function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
 function random_music(url)
 {
+  let arr=[];
   fetch(url)
   .then(response=>{
     if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
     return response.json();
   })
   .then(data=>{
-    let arr=[];
     for(let i=0;i<data.audio.lenth;i++)
       for(let j=0;j<data.audio[i].num;j++)
         arr.push(data.audio[i].url);
-    document.querySelector("audio>source").innerHTML.src=arr[random(0,arr.lenth-1)];
+    document.querySelector("audio>source").src=arr[random(0,arr.lenth-1)];
   })
   .catch(error=>{
     document.querySelector("audio").innerHTML=`加载失败：${error.message}`;
