@@ -27,11 +27,7 @@
         <footer id="footer-left"></footer>
       </div>
       <div id="right">
-        <div class="card">
-          <audio controls loop>
-            <source type="audio/mp3"></source>
-            您的浏览器不支持 audio 元素……
-          </audio>
+        <div id="sidebar" class="card">
           <script>
 function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
 function random_music(url)
@@ -46,10 +42,10 @@ function random_music(url)
     for(let i=0;i<data.audio.length;i++)
       for(let j=0;j<data.audio[i].weight;j++)
         arr.push(data.audio[i].url);
-    document.querySelector("audio>source").src=arr[random(0,arr.length-1)];
+    document.querySelector("sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source></audio>`+document.querySelector("sidebar").innerHTML;
   })
   .catch(error=>{
-    document.querySelector("audio").innerHTML=`加载失败：${error.message}`;
+    document.querySelector("sidebar").innerHTML=`<p>加载失败：${error.message}</p>`+document.querySelector("sidebar").innerHTML;
   });
 }
 random_music("/audio/cosmic-princess-kaguya/config.json");
