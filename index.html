@@ -104,7 +104,7 @@ function random_music(url)
     for(let i=0;i<data.audio.length;i++)
       for(let j=0;j<data.audio[i].weight;j++)
         arr.push(data.audio[i].url);
-    document.querySelector("audio>source").src=arr[random(0,arr.lenth-1)];
+    document.querySelector("audio>source").src=arr[random(0,arr.length-1)];
   })
   .catch(error=>{
     document.querySelector("audio").innerHTML=`加载失败：${error.message}`;
