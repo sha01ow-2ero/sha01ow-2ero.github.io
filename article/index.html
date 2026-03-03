@@ -74,7 +74,8 @@ function footer()
   footer_right.innerHTML=is_mobile?footerHTML:'';
 }
 //marked渲染
-function putmarkdown_article(selector,url)
+let obj=null;
+function putarticle(selector,url)
 {
   fetch(url)
   .then(response=>{
@@ -82,9 +83,9 @@ function putmarkdown_article(selector,url)
     return response.json();
   })
   .then(data=>{
-    var obj=data;
+    obj=data;
     for(let _=1;_<obj.article.length;_++)
-      document.querySelector(selector).innerHTML+=`<div class="card article"><h1>${obj.article[_].title}</h1>发布时间：${obj.article[_].time} 分类：${obj.article[_].category}</div>`;//marked（按 css 的 id 和 class 选择器查找）
+      document.querySelector(selector).innerHTML+=`<div class="card article" onclick="put_content(${_})"><h1>${obj.article[_].title}</h1>发布时间：${obj.article[_].time} 分类：${obj.article[_].category}</div>`;//marked（按 css 的 id 和 class 选择器查找）
   })
   .catch(error=>{
     document.querySelector(selector).innerHTML=`<div class="card article">Markdown 加载失败：${error.message}</div>`;
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded',function(){//等待文档完全加�
     resize_timer=requestAnimationFrame(footer);
   });
   footer();
-  putmarkdown_article("#article","./article.json");
+  putarticle("#article","./article.json");
 });
     </script>
   </body>
