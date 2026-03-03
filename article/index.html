@@ -93,7 +93,7 @@ function putarticle(selector,url)
 }
 function putcontent(num)
 {
-  document.querySelector("#content").innerHTML=marked.parse(btou(obj.article[num].content));//marked（按 css 的 id 和 class 选择器查找）
+  document.querySelector("#content").innerHTML='<div class="card">'+marked.parse(btou(obj.article[num].content))+'</div>';//marked（按 css 的 id 和 class 选择器查找）
   document.querySelector("#article").innerHTML="";
   hljs.highlightAll();//highlight.js
   if(window.MathJax)MathJax.typesetPromise?.();
