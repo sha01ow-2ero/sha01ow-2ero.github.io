@@ -85,11 +85,18 @@ function putarticle(selector,url)
   .then(data=>{
     obj=data;
     for(let _=1;_<obj.article.length;_++)
-      document.querySelector(selector).innerHTML+=`<div class="card article" onclick="put_content(${_})"><h1>${obj.article[_].title}</h1>发布时间：${obj.article[_].time} 分类：${obj.article[_].category}</div>`;//marked（按 css 的 id 和 class 选择器查找）
+      document.querySelector(selector).innerHTML+=`<div class="card article"><h1 onclick="putcontent(${_})">${obj.article[_].title}</h1>发布时间：${obj.article[_].time} 分类：${obj.article[_].category}</div>`;//marked（按 css 的 id 和 class 选择器查找）
   })
   .catch(error=>{
     document.querySelector(selector).innerHTML=`<div class="card article">Markdown 加载失败：${error.message}</div>`;
   });
+}
+function putcontent(num)
+{
+  document.querySelector("#content").innerHTML=marked.parse(btou(obj.article[num].content));//marked（按 css 的 id 和 class 选择器查找）
+  document.querySelector("#article").innerHTML="";
+  hljs.highlightAll();//highlight.js
+  if(window.MathJax)MathJax.typesetPromise?.();
 }
 document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
   let resize_timer;
