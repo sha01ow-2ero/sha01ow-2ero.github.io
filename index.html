@@ -75,7 +75,7 @@ function putmarkdown(selector,url)
 {
   fetch(url)
   .then(response=>{
-    if(!response.ok)throw new Error(`Markdown 加载失败：HTTP ${response.status}`);
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
     return response.text();
   })
   .then(text=>{
@@ -94,7 +94,7 @@ function random_music(url)
   let arr=[];
   fetch(url)
   .then(response=>{
-    if(!response.ok)throw new Error(`加载失败：HTTP ${response.status}`);
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
     return response.json();
   })
   .then(data=>{
@@ -104,7 +104,7 @@ function random_music(url)
     document.querySelector("#sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source></audio>`+document.querySelector("#sidebar").innerHTML;
   })
   .catch(error=>{
-    document.querySelector("#sidebar").innerHTML=`<p>加载失败：${error.message}</p>`+document.querySelector("#sidebar").innerHTML;
+    document.querySelector("#sidebar").innerHTML=`<p>MP3 加载失败：${error.message}</p>`+document.querySelector("#sidebar").innerHTML;
   });
 }
 document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
