@@ -26,11 +26,7 @@
         <footer id="footer-left"></footer>
       </div>
       <div id="right">
-        <div class="card">
-          <audio controls loop>
-            <source src="/audio/world-is-mine-remix.flac" type="audio/flac"></source>
-            您的浏览器不支持 audio 元素或 audio 元素的 flac 格式音频文件……
-          </audio>
+        <div id="sidebar" class="card">
           <nav>
             <a class="card" href="/article"><p>article</p></a>
             <a class="card" href="/image"><p>image</p></a>
@@ -79,7 +75,7 @@ function putarticle(selector,url)
 {
   fetch(url)
   .then(response=>{
-    if(!response.ok)throw new Error(`Markdown 加载失败：HTTP ${response.status}`);
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
     return response.json();
   })
   .then(data=>{
@@ -88,7 +84,7 @@ function putarticle(selector,url)
       document.querySelector(selector).innerHTML+=`<div class="card article"><h1 onclick="putcontent(${_})">${obj.article[_].title}</h1>发布时间：${obj.article[_].time} 分类：${obj.article[_].category}</div>`;//marked（按 css 的 id 和 class 选择器查找）
   })
   .catch(error=>{
-    document.querySelector(selector).innerHTML=`<div class="card article">Markdown 加载失败：${error.message}</div>`;
+    document.querySelector(selector).innerHTML=`<div class="card article">Article 加载失败：${error.message}</div>`;
   });
 }
 function putcontent(num)
@@ -98,6 +94,26 @@ function putcontent(num)
   hljs.highlightAll();//highlight.js
   if(window.MathJax)MathJax.typesetPromise?.();
 }
+//随机音频播放器
+function random(min,max){return Math.floor(Math.random()*(max-min+1))+min;}//随机数
+function random_music(url)
+{
+  let arr=[];
+  fetch(url)
+  .then(response=>{
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data=>{
+    for(let i=0;i<data.audio.length;i++)
+      for(let j=0;j<data.audio[i].weight;j++)
+        arr.push(data.audio[i].url);
+    document.querySelector("#sidebar").innerHTML=`<audio controls loop><source src="${arr[random(0,arr.length-1)]}" type="audio/mp3"></source></audio>`+document.querySelector("#sidebar").innerHTML;
+  })
+  .catch(error=>{
+    document.querySelector("#sidebar").innerHTML=`<p>MP3 加载失败：${error.message}</p>`+document.querySelector("#sidebar").innerHTML;
+  });
+}
 document.addEventListener('DOMContentLoaded',function(){//等待文档完全加载和解析完成
   let resize_timer;
   window.addEventListener('resize',()=>{
@@ -106,6 +122,7 @@ document.addEventListener('DOMContentLoaded',function(){//等待文档完全加�
   });
   footer();
   putarticle("#article","./article.json");
+  random_music("/audio/cosmic-princess-kaguya/config.json");
 });
     </script>
   </body>
