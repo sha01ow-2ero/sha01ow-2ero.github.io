@@ -1,0 +1,15 @@
+{
+  "audio":
+  [
+    {"url":"/audio/cosmic-princess-kaguya/A-Symphony-of-Moments.mp3","weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/Ex-Otogibanashi.mp3"      ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/Happy-Synthesizer.mp3"    ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/I-like-myself..mp3"       ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/Melt.mp3"                 ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/Remember.mp3"             ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/Reply.mp3"                ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/Starry-Sea.mp3"           ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/World-Is-Mine.mp3"        ,"weight":1},
+    {"url":"/audio/cosmic-princess-kaguya/ray.mp3"                  ,"weight":1}
+  ]
+}
