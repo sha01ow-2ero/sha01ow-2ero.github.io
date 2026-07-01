@@ -9,7 +9,7 @@
         if(str1!="请输入登录账号" && str2!="请输入登录密码" && str3!="请输入手机号")
           alert("请正确填写信息");
         else
-          window.open("grade.html");
+          document.write("<table border="1"><tr><td>语文</td><td>120</td></tr><tr><td>数学</td><td>120</td></tr><tr><td>外语</td><td>120</td></tr><tr><td>道德与法治</td><td>60</td></tr><tr><td>历史</td><td>60</td></tr><tr><td>物理</td><td>60</td></tr><tr><td>化学</td><td>60</td></tr><tr><td>其他</td><td>200</td></tr><tr><td>总计</td><td>800</td></tr></table>");
       }
     </script>
   </head>
@@ -19,7 +19,7 @@
     <input id="password" type="text" value="请输入登录密码"><br/>
     <input id="phonenum" type="text" value="请输入手机号"><br/>
     </p>
-    <button onclick="check(username.value+'',password.value+'',phonenum.number+'');">登录</button><br/>
+    <button onclick="check(username.value+'',password.value+'',phonenum.value+'');">登录</button><br/>
     </p>
   </body>
 </html>
