@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script>
+      function check(str1,str2,str3)
+      {
+        if(str1!="请输入登录账号" && str2!="请输入登录密码" && str3!="请输入手机号")
+          alert("请正确填写信息");
+        else
+          window.open("grade.html");
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+    <input id="username" type="text" value="请输入登录账号"><br/>
+    <input id="password" type="password" value="请输入登录密码"><br/>
+    <input id="phonenum" type="text" value="请输入手机号"><br/>
+    </p>
+    <button onclick="check(username.value+'',password.value+'',phone.number+'');">登录</button><br/>
+    </p>
+  </body>
+</html>
